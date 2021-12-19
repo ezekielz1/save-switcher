@@ -1,0 +1,14 @@
+{
+  "name": "save-switcher",
+  "version": "1.0.0",
+  "description": "A save switcher for games",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Ezekielz1",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^15.2.0"
+  }
+}

@@ -1,0 +1,51 @@
+.add {
+    position: fixed;
+    bottom: 2.5em;
+    right: 2.5em;
+    padding: 0.5em;
+    border-radius: 4em;
+    box-sizing: border-box;
+
+    background-color: white;
+    box-shadow: 0 1em 1em -1em var(--save-background-shadow);
+
+    transition: .1s transform, .1s filter;
+}
+
+.add:hover {
+    transform: scale(1.03);
+}
+
+.add:active {
+    transform: scale(0.98);
+    filter: brightness(0.9);
+}
+
+.add:active .add__button__icon {
+    transform: scale(1.1);
+}
+
+.add__button {
+    padding: 2em;
+    outline: 0;
+    border: 0;
+    border-radius: inherit;
+
+    background: var(--add-button-background);
+    cursor: pointer;
+}
+
+.add__button__icon {
+    width: 3em; 
+    height: 3em;
+
+    -webkit-mask-size: cover;
+    mask-size: cover;
+
+    background-color: var(--add-button-icon-color);
+
+    -webkit-mask-image: url(../svg/ui_symbols/add.svg);
+    mask-image: url(../svg/ui_symbols/add.svg);
+
+    transition: .1s transform;
+}

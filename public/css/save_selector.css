@@ -1,0 +1,314 @@
+.save-selector {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.save-selector__save {
+    display: flex;
+    flex-direction: column;
+    flex-basis: var(--save-image-width);
+    align-items: center;
+
+    margin: 1em;
+    padding: 1em;
+
+    border-radius: 0.5em;
+
+    background-color: white;
+    box-shadow: 0 1em 2em -1em var(--save-background-shadow);
+
+    user-select: none;
+    cursor: pointer;
+
+    transition: 0.25s transform;
+}
+
+.save-selector__save:hover {
+    transform: scale(1.05);
+}
+
+.save-selector__save:hover .save-selector__save__image {
+    transform: scale(1.1);
+}
+
+.save-selector__save:hover .save-selector__save__title {
+    transform: translateY(0.5em);
+}
+
+
+.save-selector__save:active {
+    filter: brightness(0.98);
+    transform: scale(1.03);
+}
+
+.save-selector__save__image {
+    height: var(--save-image-height);
+    width: var(--save-image-width);
+    object-fit: contain;
+    transition: .1s transform;
+}
+
+.save-selector__save__title {
+    display: inline-flex;
+    align-items: center;
+    flex-grow: 1;
+    margin-top: 0.5em;
+
+    color: var(--save-select-title-color);
+
+    font-weight: 700;
+    text-align: center;
+
+
+    transition: .1s transform;
+}
+
+.save-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    align-self: center;
+
+    padding: 2em;
+    position: fixed;
+
+    /*margin-top: 3em;*/
+    top: 3em;
+    box-sizing: border-box;
+    border-radius: 1em;
+
+    background: var(--modal-background);
+
+    z-index: 100;
+
+    backdrop-filter: blur(25px);
+    box-shadow: 0 1.5em 5em -1.5em var(--page-background-shadow);
+
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.9);
+    transition:visibility 0s linear 0.1s, opacity 0.1s linear, transform 0.1s linear;
+
+}
+
+.save-modal--visible {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+    transition-delay:0s;
+}
+
+.save-modal__header__close-button {
+
+    border: 0;
+    outline: 0;
+
+    background: none;
+
+    cursor: pointer;
+    transition: .1s transform ease-in;
+}
+
+.save-modal__header {
+    display: flex;
+    align-self: stretch;
+
+    padding: 0;
+    margin: 0;
+}
+
+.save-modal__header__drag-region {
+    flex-grow: 1;
+    margin: 0.25em 1em 0.25em 0;
+
+    border-radius: 1em;
+    background-color: var(--modal-drag-color);
+
+    cursor: pointer;
+}
+
+.save-modal__header__close-button:hover {
+    transform: scale(1.1);
+}
+
+.save-modal__header__close-button__icon {
+    width: 1.5em; 
+    height: 1.5em;
+
+    -webkit-mask-size: cover;
+    mask-size: cover;
+
+    background-color: var(--modal-close-button-icon-color);
+
+    -webkit-mask-image: url(../svg/ui_symbols/close.svg);
+    mask-image: url(../svg/ui_symbols/close.svg);
+}
+
+.save-modal__id {
+    margin-top: 0.25em;
+    align-self: flex-start;
+    font-size: 1em;
+
+    color: var(--modal-id-color);
+    cursor: pointer;
+
+    user-select: none;
+}
+
+.save-modal__image {
+    height: var(--save-image-height);
+    width: var(--save-image-width);
+    margin-top: 1em;
+
+    padding: 1em;
+
+    border-radius: 1em;
+    
+    box-shadow: 0 0 0 0 var(--modal-elements-background-shadow);
+
+    user-select: none;
+    cursor: pointer;
+
+    transition: .1s background-color, .1s box-shadow, .1s filter, .1s transform;
+}
+
+.save-modal__image:hover {
+    background-color: white;
+    box-shadow: 0 1em 1em -1em var(--modal-elements-background-shadow);
+}
+
+.save-modal__image:active {
+    filter: brightness(0.9);
+    transform: scale(0.95);
+}
+
+.save-modal__image:hover .save-modal__image__img {
+    transform: scale(1.1);
+}
+
+.save-modal__image__img {
+    height: var(--save-image-height);
+    width: var(--save-image-width);
+    object-fit: contain;
+
+    transition: .1s transform;
+}
+
+.save-modal__title {
+    margin-top: 0.5em;
+    padding: 0.25em;
+
+    outline: 0;
+    border-radius: 0.25em;
+
+    color: var(--modal-title-color);
+    background-color: var(--modal-title-background-color);
+
+    font-size: 2em;
+    font-weight: 700;
+
+    box-shadow: 0 1em 1em -1em #00000000;
+
+    transition: .1s transform, .1s box-shadow;
+}
+
+.save-modal__title:focus {
+    transform: scale(1.05);
+    box-shadow: 0 1em 1em -1em var(--modal-elements-background-shadow);
+}
+
+.save-modal__description {
+    margin-top: 1em;
+    padding: 1em;
+
+    border: 0;
+    outline: 0;
+
+    border-radius: 1em;
+
+    font-size: 1em;
+    font-family: inherit;
+
+    box-shadow: 
+        0 0 0 0 #00000000,
+        inset 0 1em 1em -1em var(--modal-elements-background-shadow);
+
+    resize: none;
+
+    transition: 0.1s box-shadow;
+}
+
+.save-modal__description:focus {
+    box-shadow: 
+        0 1em 1em -1em var(--modal-elements-background-shadow),
+        inset 0 0 0 0 #00000000;
+}
+
+.save-modal__button-container {
+    display: flex;
+    align-self: flex-end;
+    margin-top: 1em;
+}
+
+.save-modal__button {
+    display: flex;
+    margin-left: 1em;
+    padding: 0.75em 1em;
+
+    border: 0;
+    border-radius: 0.25em;
+    
+    font-size: 1em;
+    font-weight: 700;
+
+    color: var(--modal-button-color);
+    background: var(--modal-button-background);
+
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+
+    transition: 0.1s filter, 0.1s transform;
+}
+
+.save-modal__button--play {
+    color: var(--modal-button-play-color);
+    background: var(--modal-button-play-background);
+}
+
+.save-modal__button:hover {
+    filter: brightness(1.1);
+}
+
+.save-modal__button:active {
+    filter: brightness(0.98);
+    transform: scale(0.98);
+}
+
+.save-modal__button__icon {
+    width: 0.8em; 
+    height: 0.8em;
+
+    -webkit-mask-size: cover;
+    mask-size: cover;
+
+    background-color: var(--modal-button-icon-color);
+}
+
+.save-modal__button__icon--play {
+    margin-left: 0.5em;
+
+    -webkit-mask-image: url(../svg/ui_symbols/play.svg);
+    mask-image: url(../svg/ui_symbols/play.svg);
+
+    background-color: var(--modal-button-icon-play-color);
+}
+
+.save-modal__button__icon--folder {
+    margin-right: 0.5em;
+
+    -webkit-mask-image: url(../svg/ui_symbols/folder.svg);
+    mask-image: url(../svg/ui_symbols/folder.svg);
+}

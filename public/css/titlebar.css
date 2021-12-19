@@ -1,0 +1,102 @@
+.title-bar {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+
+    box-sizing: border-box;
+}
+
+.title-bar__title-region {
+    justify-self: stretch;
+    flex-grow: 1;
+    -webkit-app-region: drag;
+
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.title-bar__title-region__icon {
+    margin-left: 0.5em;
+    height: 2em;
+
+    filter: drop-shadow(0 0.125em 0.125em var(--title-background-shadow))
+}
+
+.title-bar__title-region__title {
+    margin-left: 0.5em;
+
+    padding: 0.25em 0.5em;
+
+    border-radius: 0.25em;
+
+    white-space: nowrap;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--title-text-color);
+    background-color: var(--titlebar-icon-color);
+
+    box-shadow: 0 0.25em 0.25em -0.125em var(--title-background-shadow);
+
+}
+
+.title-bar__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0.75em;
+    margin-left: 0;
+    padding: 0.75em;
+    border: none;
+    border-radius: 100%;
+
+    background-color: var(--titlebar-icon-background-color);
+
+    transition: background-color .1s;
+}
+
+.title-bar__btn:hover {
+    background-color: var(--titlebar-icon-background-color-hover);
+}
+
+.title-bar__btn--close:hover {
+    background-color: var(--titlebar-icon-background-color-close-hover);
+}
+
+.title-bar__btn:active {
+    filter: brightness(80%);
+    transform: scale(0.95);
+}
+
+.title-bar__btn__icon {
+    width: 0.75em; 
+    height: 0.75em;
+
+    -webkit-mask-size: cover;
+    mask-size: cover;
+
+    background-color: var(--titlebar-icon-color);
+}
+
+.title-bar__btn__icon--min{
+    -webkit-mask-image: url(../svg/titlebar/minimize.svg);
+    mask-image: url(../svg/titlebar/minimize.svg);
+}
+
+.title-bar__btn__icon--max{
+    -webkit-mask-image: url(../svg/titlebar/maximize.svg);
+    mask-image: url(../svg/titlebar/maximize.svg);
+}
+
+.title-bar__btn__icon--rest{
+    -webkit-mask-image: url(../svg/titlebar/restore.svg);
+    mask-image: url(../svg/titlebar/restore.svg);
+}
+
+.title-bar__btn__icon--close{
+    -webkit-mask-image: url(../svg/titlebar/close.svg);
+    mask-image: url(../svg/titlebar/close.svg);
+}

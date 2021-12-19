@@ -1,0 +1,119 @@
+:root {
+    --system-accent-color: white;
+
+    --titlebar-icon-color: white;
+    --titlebar-icon-background-color: #1a1a1a;
+    --titlebar-icon-background-color-hover: #2b2b2b;
+    --titlebar-icon-background-color-close-hover: #ff3232;
+    
+    --title-text-color: #1a1a1a;
+    --title-background-color: white;
+    --title-background-shadow: #0000007a;
+
+    --body-background: var(--system-accent-color);
+    
+    --header-title-color: #1a1a1a;
+
+    --modal-drag-color: #0000003d;
+    --modal-close-button-icon-color: #0000003d;
+    --modal-id-color: #0000003d;
+    --modal-title-color: #1a1a1a;
+    --modal-title-background-color: white;
+    --modal-button-color: #1a1a1a;;
+    --modal-button-background: white;
+    --modal-button-play-color: white;
+    --modal-button-play-background: var(--system-accent-color);
+    --modal-button-icon-color: #1a1a1a;
+    --modal-button-icon-play-color: white;
+    --modal-cursor-text-color: #1a1a1a;
+    --modal-cursor-background-color: white;
+    --modal-background: none;
+
+    --add-button-icon-color: white;
+    --add-button-background: linear-gradient(45deg, white, var(--system-accent-color));
+
+    --save-image-width: 128px;
+    --save-image-height: 128px;
+
+    --save-select-title-color: #1a1a1a;
+    
+    --page-background-shadow: #0000007a;
+    --modal-background-shadow: #0000007a;
+    --modal-elements-background-shadow: #0000007a;
+    --save-background-shadow: #0000007a;
+    
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+    
+    overflow: hidden;
+
+    /* background-color: white; */
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    
+    background: var(--body-background);
+
+    box-sizing: border-box;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    flex-grow: 1;
+    margin: 1em;
+    border: solid 1em white;
+
+    box-sizing: border-box;
+    border-radius: 0.5em;
+    
+    background: url(../png/background.png) center / cover var(--body-background);
+    box-shadow: 0 0 1em 0 var(--page-background-shadow);
+
+    overflow-x: hidden;
+    overflow-y: overlay;
+}
+
+.cursor-attached {
+    visibility: hidden;
+    position: fixed;
+    padding: 0.5em 1em;
+
+    border-radius: 1em;
+
+    color: var(--modal-cursor-text-color);
+    background: var(--modal-cursor-background-color);
+
+    font-size: 1em;
+    z-index: 200;
+}
+
+::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+    visibility: hidden;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    border-radius: 1em;
+}
+
+::selection {
+    background-color: var(--system-accent-color);
+}

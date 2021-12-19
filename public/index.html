@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <template id='templateSave'>
+        <div class='save-selector__save'>
+            <img class='save-selector__save__image' draggable="false"/>
+            <span class='save-selector__save__title'></span>
+        </div>
+    </template>
+
+    <head>
+        <meta charset="UTF-8">
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+        <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+        <link rel="stylesheet" href="css/main_styles.css">
+        <link rel="stylesheet" href="css/titlebar.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/save_selector.css">
+        <link rel="stylesheet" href="css/add_button.css">
+        <link rel="stylesheet" href="css/animations.css">
+        <script src="js/main.mjs" type='module'></script>
+        <script src="js/modules/titlebar.mjs" type='module'></script>
+        <script src="js/modules/header.mjs" type='module'></script>
+        <script src="js/modules/save_selector.mjs" type='module'></script>
+        <script src="js/modules/draggable.mjs" type='module'></script>
+        <script src="js/modules/components/save_component.mjs" type='module'></script>
+        <title>Save Switcher</title>
+    </head>
+    <body draggable="false">
+        <div class='title-bar' id="titleBar">
+            <div class='title-bar__title-region'>
+                <img class='title-bar__title-region__icon' src='./png/icon.png'/>
+                <span class='title-bar__title-region__title' id="titleWindowTitle"></span>
+            </div>
+            <button class='title-bar__btn title-bar__btn--min' id='titleMinimizeButton'>
+                <div class='title-bar__btn__icon title-bar__btn__icon--min'></div>
+            </button>
+            <button class='title-bar__btn title-bar__btn--max-rest' id='titleMaxRestButton'>
+                <div class='title-bar__btn__icon title-bar__btn__icon--max'></div>
+            </button>
+            <button class='title-bar__btn title-bar__btn--close' id='titleCloseButton'>
+                <div class='title-bar__btn__icon title-bar__btn__icon--close'></div>
+            </button>
+        </div>
+        <div class='save-modal' id='saveModal'>
+            <div class='save-modal__header' id="saveModalHeader">
+                <div class='save-modal__header__drag-region' id='saveModalHeaderDrag'></div>
+                <button class='save-modal__header__close-button' id='saveModalCloseButton'>
+                    <div class='save-modal__header__close-button__icon'></div>
+                </button>
+            </div>
+            <span class='save-modal__id' id='saveModalID'></span>
+            <div class='save-modal__image'>
+                <img class='save-modal__image__img' id='saveModalImage' src='./svg/defaults/no_image.svg' draggable="false"/>
+            </div>
+            <span class='save-modal__title' id='saveModalTitle' contenteditable="true" spellcheck="false">Placeholder</span>
+            <textarea class='save-modal__description' id='saveModalDescription' name="description" id="" cols="60" rows="7" spellcheck="false"></textarea>
+            <div class='save-modal__button-container'>
+                <button class='save-modal__button' id="saveModalOpenFolder"><div class='save-modal__button__icon save-modal__button__icon--folder'></div>Show Folder</button>
+                <button class='save-modal__button save-modal__button--play' id="saveModalPlay">Play<div class='save-modal__button__icon save-modal__button__icon--play'></div></button>
+            </div>
+        </div>
+        <div class='page'>
+            <header class='header'>
+                <h1 class='header__title'>Save Sets</h1>
+            </header>
+            <main class='main'>
+                <div class='save-selector' id='saveSelector'>
+                </div>
+                <div class='add' id='add'>
+                    <button class='add__button' id='addButton'>
+                        <div class='add__button__icon'></div>
+                    </button>
+                </div>
+            </main>
+            <!-- <footer class='footer'>
+                this is the footer
+            </footer> -->
+        </div>
+        <span class='cursor-attached' id='cursorAttached'>Click to add ID to Clipboard</span>
+    </body>
+</html>
